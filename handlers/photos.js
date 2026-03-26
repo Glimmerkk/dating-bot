@@ -24,6 +24,10 @@ bot.sendMediaGroup(chatId,[
 
 ])
 
+bot.sendMessage(chatId,
+`Hope you like what you see 😘
+Tap Reserve 💌 to spend time with me tonight.`)
+
 }
 
 if(user.girl === "anna"){
@@ -39,6 +43,10 @@ bot.sendMediaGroup(chatId,[
 {type:"photo",media:"./photos/anna7.jpg"}
 
 ])
+
+bot.sendMessage(chatId,
+`Hope you like what you see 😘
+Tap Reserve 💌 to spend time with me.`)
 
 }
 
