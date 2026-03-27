@@ -49,15 +49,29 @@ const RENDER_URL = process.env.RENDER_URL
 
 if(RENDER_URL){
 
+console.log("Self ping enabled")
+
 setInterval(()=>{
 
+try{
+
 https.get(RENDER_URL,(res)=>{
-console.log("Self ping success")
-}).on("error",(err)=>{
+console.log(`Self ping success: ${res.statusCode}`)
+})
+
+.on("error",(err)=>{
 console.log("Ping error:",err.message)
 })
 
-},300000) // every 5 minutes
+}catch(err){
+console.log("Ping failed:",err.message)
+}
+
+},300000) // 5 minutes
+
+}else{
+
+console.log("RENDER_URL not set. Self ping disabled.")
 
 }
 
